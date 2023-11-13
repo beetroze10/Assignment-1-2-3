@@ -1,0 +1,38 @@
+CONTROL STRUCTURE ASSIGNMENT
+1.Explain when it is suitable or advisable to use the following control structures.
+I)For Loop.
+- Best used when you know how many iterations are needed. The for loop lets you specify the iteration condition upfront.
+e.g-for (int count = 0; count< 10; count++) {
+  //execute code 10 times 
+}
+II)While loop.
+-Best used when you don't know exactly how many iterations are needed. The while loop lets you specify a condition that controls when the loop stops. 
+e.g-int count = 0;
+while (count < 10) {
+  //execute code until condition becomes false
+  count++; 
+}
+III)Do---while loop.
+-Similar to while loops, except the code block inside the loop is guaranteed to execute at least once. The condition is checked after the first iteration. Useful when you need to iterate at least once before checking a condition.
+e.g-int count = 0; 
+do {
+  //code executes before condition check
+  count++;
+} while (count < 10);
+2.Explain the difference between while loop and do while loop.
+DIFFERENCE.
+1-In a while loop, the condition is checked before the loop body is executed.
+-If the condition is initially false, the loop body will not be executed at all.
+-If the condition becomes false during the execution of the loop, the loop exits immediately before the next iteration.
+e.g-int count = 0;
+while (count < 5) {
+    System.out.println("Count is: " + count);
+    count++;
+}
+2-In a do-while loop, the loop body is executed at least once, regardless of whether the condition is true or false.
+-The condition is checked after the loop body is executed, so even if the condition is initially false, the loop body will execute at least once.
+e.g-int count = 0;
+do {
+    System.out.println("Count is: " + count);
+    count++;
+} while (count < 5);
