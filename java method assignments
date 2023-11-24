@@ -1,0 +1,207 @@
+JAVA PROGRAMMING ASSIGNMENTS.
+Instructions 
+Answer all the questions. 
+Each question is five marks.
+
+QUESTION ONE:
+Create a java project, name it methods_in_java, in the project create a package named java_methods and in the package, create a class and named methods. 
+b. in the classmethods, write a method that asks user to enter three numbers, using if statement determine the largest number, the smallest number and display the results in the following format. 
+The smallest number: ?
+The largest number  number: ?
+? is your largest and ? smallest number.
+package java_methods;
+
+import java.util.Scanner;
+
+public class Methods {
+
+    public static void main(String[] args) {
+        Methods methods = new Methods();
+
+        // Call the method to get user input and determine the smallest and largest numbers
+        methods.findSmallestAndLargest();
+    }
+
+    // Method to get user input and find the smallest and largest numbers
+    public void findSmallestAndLargest() {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask the user to enter three numbers
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.print("Enter the third number: ");
+        double num3 = scanner.nextDouble();
+
+        // Determine the smallest and largest numbers using if statements
+        double smallest = num1;
+        double largest = num1;
+
+        if (num2 < smallest) {
+            smallest = num2;
+        } else if (num2 > largest) {
+            largest = num2;
+        }
+
+        if (num3 < smallest) {
+            smallest = num3;
+        } else if (num3 > largest) {
+            largest = num3;
+        }
+
+        // Display the results
+        System.out.println("The smallest number: " + smallest);
+        System.out.println("The largest number: " + largest);
+        System.out.println(smallest + " is your smallest number, and " + largest + " is your largest number.");
+
+        scanner.close();
+    }
+}
+Used the double data type it does not display a whole No.
+
+QUESTION 2:
+Create a java project, package and class. In the class, write a method that asks a lecturer to enter marks for three units, java programming, networking and maths. The method should compute the average marks for three units and output the data in the following format. 
+
+marks for java programming is: ?
+marks for networking is: ?
+marks for maths is: ?
+the average is: ?
+package academics;
+
+import java.util.Scanner;
+
+public class Lecturer {
+
+    public static void main(String[] args) {
+        // Create an instance of the Lecturer class
+        Lecturer lecturer = new Lecturer();
+
+        // Call the method to enter and calculate marks
+        lecturer.calculateAndDisplayMarks();
+    }
+
+    // Method to ask for marks and calculate the average
+    public void calculateAndDisplayMarks() {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask the lecturer to enter marks for three units
+        System.out.print("Enter marks for Java Programming: ");
+        double javaMarks = scanner.nextDouble();
+
+        System.out.print("Enter marks for Networking: ");
+        double networkingMarks = scanner.nextDouble();
+
+        System.out.print("Enter marks for Maths: ");
+        double mathsMarks = scanner.nextDouble();
+
+        // Calculate the average
+        double averageMarks = (javaMarks + networkingMarks + mathsMarks) / 3;
+
+        // Display the marks and average
+        System.out.println("Marks for Java Programming is: " + javaMarks);
+        System.out.println("Marks for Networking is: " + networkingMarks);
+        System.out.println("Marks for Maths is: " + mathsMarks);
+        System.out.println("The average is: " + averageMarks);
+
+        scanner.close();
+    }
+}
+Used Double data type  rather than float for more accuracy on decimal.
+
+QUESTION 3:
+Write a method that asks user to enter the year, the program should check if  the year is a leap year, and output the text the year you entered is a leap year. 
+import java.util.Scanner;
+
+public class SimpleLeapYearChecker {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask the user to enter a year
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt();
+
+        // Check if it's a leap year and display the result
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+            System.out.println("Leap year!");
+        } else {
+            System.out.println("Not a leap year.");
+        }
+//The code checks if the year is divisible by 4 and, if it's not divisible by 100, or if it's divisible by 400.
+        scanner.close();
+    }
+}
+Create a java project, a package and a class, in the class, write a program to calculate the area of a triangle. The program should have thee non-static methods:
+One of the methods should ask the user to enter the base and the height of a triangle.
+The other method should compute the area of the rectangle.
+The other method should output the calculated area of the triangle an display it to the user.
+package geometry;
+import java.util.Scanner;
+
+public class TriangleAreaCalculator {
+
+    public static void main(String[] args) {
+        double base = getUserInput("Enter the base of the triangle: ");
+        double height = getUserInput("Enter the height of the triangle: ");
+
+        double area = calculateArea(base, height);
+
+        displayArea(area);
+    }
+
+    // Method to get input from the user
+    private static double getUserInput(String message) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(message);
+        return scanner.nextDouble();
+    }
+
+    // Method to calculate the area of the triangle
+    private static double calculateArea(double base, double height) {
+        return 0.5 * base * height;
+    }
+
+    // Method to display the calculated area
+    private static void displayArea(double area) {
+        System.out.println("The area of the triangle is: " + area);
+    }
+}
+
+Used private static to make the method  only accessible within the same class .
+QUESTION 4
+Create a java program that has one non-static method, two static methods and a constructor.
+public class Program {
+
+    // Non-static method
+    public void nonStaticMethod() {
+        System.out.println("This is a non-static method.");
+    }
+
+    // Static method 1
+    public static void staticMethod1() {
+        System.out.println("This is static method 1.");
+    }
+
+    // Static method 2
+    public static void staticMethod2() {
+        System.out.println("This is static method 2.");
+    }
+
+    // Constructor
+    public Program() {
+        System.out.println("This is the constructor.");
+    }
+
+public static void main(String[] args) {
+        
+        Program program = new Program();
+        
+        program.nonStaticMethod();
+
+        staticMethod1();
+        staticMethod2();
+    }
+}
